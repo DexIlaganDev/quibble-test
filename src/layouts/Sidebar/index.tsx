@@ -1,6 +1,7 @@
 import SidebarMenuItem from "@/components/SidebarMenuItem"
 import SidebarMenuWrapper from "@/components/SidebarMenuWrapper"
 import SidebarToggleButton from "@/components/SidebarOpenButton"
+import { useGlobalContext } from "@/context/global"
 
 
 const MenuItems = [
@@ -12,8 +13,14 @@ const MenuItems = [
 ]
 
 const Sidebar = () => {
+
+    const {states} = useGlobalContext()
+
     return (
         <nav className="sidebar bg-light-gray">
+            {
+                JSON.stringify(states)
+            }
             <SidebarToggleButton />
 
             <SidebarMenuWrapper>

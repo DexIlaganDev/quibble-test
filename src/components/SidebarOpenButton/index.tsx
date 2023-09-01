@@ -1,8 +1,22 @@
+import { useGlobalContext } from "@/context/global"
 
+const SidebarToggleButton = () => { 
 
-const SidebarToggleButton = () => {
+    // Context
+    const {states,setStates} = useGlobalContext()
+    const {menuState} = states
+
+    // Events
+    const handleToggleButtonClick = () => {
+
+        const toggleState = menuState == 'closed' ? 'open' : 'closed'
+        setStates( {...states, menuState : toggleState} )
+    }
+
     return (
-        <div className="btn-primary text-md fw-semi-bold text-center rounded-circle toggle-menu">Open</div>
+        <button 
+        onClick={ () => handleToggleButtonClick() }
+        className="btn-primary text-md fw-semi-bold text-center rounded-circle toggle-menu">{ menuState === 'closed' && "Open" || 'open' && "Close" }</button>
     )
 }
 
