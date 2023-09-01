@@ -157,11 +157,9 @@ body {
 
 /** Home Page Main **/
 .homepage {
-  display: grid;
+  display: flex;
   height: 100vh; /* not bp */
-  grid-template-columns: 350px 10fr;
 }
-
 
 /** Sidebars **/
 .sidebar{
@@ -172,23 +170,77 @@ body {
   flex-direction: column;
   align-items: center;
   padding-top: var(--main-padding-top);
+
+  flex-shrink: 0;
+  transition: width 0.2s;
 }
+
 
 .sidebar-menu-wrapper {
   display:flex;
   flex-direction: column;
   gap: .875rem;
   width: 100%;
+
+  transition: all 50ms ease-in-out;
 }
 .toggle-menu {
-  width: 75px;
-  height: 75px;
   display:inline-flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+
+  transition: width 300ms;
 }
 
-/** Main Content **/
+
+/** **************************************
+  Sidebar Toggle Close Open Shift Animations 
+                              ****************/
+.homepage.closed .sidebar {
+  width: 150px;
+}
+.homepage.open .sidebar {
+  width: 350px;
+}
+
+.homepage.closed .sidebar-menu-wrapper  {
+  visibility: hidden;
+}
+.homepage.open .sidebar-menu-wrapper  {
+  visibility: visible;
+}
+.homepage.default .sidebar-menu-wrapper  {
+  margin-block: auto;
+}
+.homepage.up .sidebar-menu-wrapper  {
+  margin-bottom: auto;
+  margin-top: 1rem;
+}
+.homepage.down .sidebar-menu-wrapper  {
+  margin-top: 1rem;
+}
+.homepage.down .toggle-menu  {
+  margin-top: auto;
+}
+
+.homepage .toggle-menu {
+  width: 75px;
+  height: 75px;
+}
+.homepage.open .toggle-menu  {
+  width: 200px;
+  border-radius: 16px !important;
+  height: initial;
+}
+
+
+
+
+
+/** **************************
+  Main Content 
+                ****************/
 .main-content {
   display: flex;
   justify-content: center;
@@ -197,6 +249,7 @@ body {
   flex-direction: column;
   position: relative;
   padding-top: var(--main-padding-top);
+  flex:1;
 } 
 
 .shift-buttons-wrapper {
