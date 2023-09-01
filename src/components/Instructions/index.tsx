@@ -7,7 +7,7 @@ const Instructions = () => {
         Click "SHIFT DOWN" to shift contents of the sidebar in a downward direction <br />
         Click "RESET" to rever the position of the items in the sidebar back to it&apos;s default state <br />
         resolution: 1920 x 1080, font-sizes: button: 18px instructions: 24px <br />
-        note : these instructions should be included in the program
+        note : these instruction texts should be included in the program
     </article>
   )
 }
