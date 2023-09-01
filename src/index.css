@@ -163,7 +163,7 @@ body {
 
 /** Sidebars **/
 .sidebar{
-  border:1px solid var(--primary);
+  border:1px solid var(--secondary);
   padding-inline : .9rem;
   text-align: center;
   display: flex;
