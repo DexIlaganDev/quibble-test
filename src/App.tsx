@@ -1,10 +1,11 @@
+import HomePage from "./pages/home"
 
 function App() {
   
 
   return (
     <>
-      <div>Hello Quibble</div>
+      <HomePage />
     </>
   )
 }

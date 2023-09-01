@@ -1,3 +1,18 @@
+:root {
+  --light-gray : #FAF6F3;
+  --gray : #BBA9A9;
+  --azure-sky : #B1DAF6;
+  --teal : #42C5E3;
+  --black : #000000;
+
+  --primary : var(---azure-sky);
+  --secondary : var(--black);
+  --accent : var(--gray);
+  --neutral : var(--light-gray);
+
+  --main-padding-top : 1.5rem;
+}
+
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -11,6 +26,9 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  color : var(--secondary);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:15px;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -30,3 +48,167 @@ p, h1, h2, h3, h4, h5, h6 {
 /*
   Start CSS
 */
+
+/** Utility Classes **/
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-neutral {
+  background-color: var(--neutral);
+}
+.bg-teal {
+  background-color: var(--teal);
+}
+.bg-light-gray {
+  background-color: var(--light-gray);
+}
+.bg-gray {
+  background-color: var(--gray);
+}
+.bg-azure {
+  background-color: var(--azure-sky);
+}
+
+
+.text-teal {
+  color: var(--teal);
+}
+.text-light-gray {
+  color: var(--light-gray);
+}
+.text-gray {
+  color: var(--gray);
+}
+.text-azure {
+  color: var(--azure-sky);
+}
+.text-black {
+  color : var(--black);
+}
+
+
+.rounded {
+  border-radius: 0.25rem!important;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-center {
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  border : 1px solid var(--accent);
+  color : var(--secondary);
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+.btn-teal {
+  background-color: var(--teal);
+  border : 1px solid var(--teal);
+  color: var(--black);
+}
+
+.btn-pad {
+  padding: .5rem 1rem;
+}
+.btn-min-w {
+  min-width:200px;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+.text-sm {
+  font-size : 14px;
+}
+.text-md {
+  font-size: 18px;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+.fw-semi-bold {
+  font-weight: 600;
+}
+.fw-bold {
+  font-weight: 700;
+}
+
+.w-full {
+  width: 100%;
+}
+
+
+/** Layouts - place in same css file temporary **/
+html {
+  height: 100%;
+}
+body {
+  min-height:100%;
+}
+
+/** Home Page Main **/
+.homepage {
+  display: grid;
+  height: 100vh; /* not bp */
+  grid-template-columns: 350px 10fr;
+}
+
+
+/** Sidebars **/
+.sidebar{
+  border:1px solid var(--primary);
+  padding-inline : .9rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--main-padding-top);
+}
+
+.sidebar-menu-wrapper {
+  display:flex;
+  flex-direction: column;
+  gap: .875rem;
+  width: 100%;
+}
+.toggle-menu {
+  width: 75px;
+  height: 75px;
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** Main Content **/
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+  position: relative;
+  padding-top: var(--main-padding-top);
+} 
+
+.shift-buttons-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/** Main Content Buttons **/
+.reset-btn {
+  position: absolute;
+  top: var(--main-padding-top);
+  right:2.5rem;
+}
